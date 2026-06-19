@@ -280,10 +280,9 @@ hmac_data = page1[16 : 4032]   （去掉头部 salt，保留到含 IV）
 - 第 1 页跳过开头 16 字节 salt 再解密，解出后补回魔数头 `SQLite format 3\x00`
 - `local_type` 含义：1=普通好友，2=群聊，3=公众号，0/5=系统账号
 
-### 5. 跨平台 / 参考实现可得性
+### 5. 跨平台支持
 
-- 本工具仅 Windows（依赖 `ReadProcessMemory` / `VirtualQueryEx`）
-- 同类参考实现里，`PyWxDump`、`wechat-dump-rs` 已被腾讯 DMCA / 律师函下架，GitHub 直连和 raw 都拿不到核心代码；`ylytdeng/wechat-decrypt`（本项目思路来源）目前 git clone 仍可用
+本工具仅支持 **Windows**，因为它依赖 Windows 专有的内存读取 API（`ReadProcessMemory` / `VirtualQueryEx`）来扫描微信进程、提取密钥。macOS / Linux 的微信内存布局和读取方式不同，本工具不适用。
 
 ---
 
