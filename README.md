@@ -289,4 +289,4 @@ hmac_data = page1[16 : 4032]   （去掉头部 salt，保留到含 IV）
 
 ## License
 
-MIT
+本项目采用 MIT 许可证，详见 [LICENSE](LICENSE) 文件。
